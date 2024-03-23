@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  min-height: 100vh;
+  font-family: 'Poppins';
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+
+  nav {
+    display: flex;
+    gap: 20px;
+
+    a {
+      text-decoration: none;
+      color: rgb(226, 68, 160);
+      font-size: 19px;
+    }
+
+    .active {
+      text-shadow: 0 0 20px pink;
+    }
+  }
+}
+
+.list-page {
+  padding: 20px
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 50px;
+
+}
+
+.card {
+  background-color: gray;
+  border-radius: 10px;
+  padding: 20px;
+
+  .top-area {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-bottom: 20px;
+
+    .letter {
+      background: purple;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      font-size: 30px;
+      text-shadow: 0 0 20px white;
+    }
+
+    .info {
+      font-size: 20px;
+    }
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+
+    .field {
+      display: flex;
+      align-items: center;
+
+      p {
+        padding: 6px;
+        border-radius: 10px;
+      }
+
+    }
+  }
+}
+
+// ekleme sayfası
+.add-page {
+  min-height: 90vh;
+  display: grid;
+  place-items: center;
+}
+
+.add-sec {
+  width: 70vw;
+  max-width: 700px;
+  box-shadow: 0 0 55px rgb(226, 68, 160);
+  padding: 25px;
+
+  form {
+    margin-top: 20px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+    
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  div input ,
+  div select{
+    padding: 10px 15px;
+    margin-top: 5px;
+    border-radius: 5px;
+    font-family: poppins;
+  }
+  div:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.filter-sec {
+  @extend .add-sec;
+  margin: 20px auto 80px;
+  }
+  
+
+
+
+
+//button
+button {
+ position: relative;
+ border: none;
+ background: transparent;
+ padding: 0;
+ cursor: pointer;
+ outline-offset: 4px;
+ -webkit-transition: -webkit-filter 250ms;
+ transition: -webkit-filter 250ms;
+ transition: filter 250ms;
+ transition: filter 250ms, -webkit-filter 250ms;
+ -webkit-user-select: none;
+    -moz-user-select: none;
+     -ms-user-select: none;
+         user-select: none;
+ -ms-touch-action: manipulation;
+     touch-action: manipulation;
+}
+
+.shadow {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: hsl(0deg 0% 0% / 0.25);
+ will-change: transform;
+ -webkit-transform: translateY(2px);
+     -ms-transform: translateY(2px);
+         transform: translateY(2px);
+ -webkit-transition: -webkit-transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+ transition: -webkit-transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1), -webkit-transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+.edge {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ border-radius: 12px;
+ background: -webkit-gradient(
+    linear,
+    right top, left top,
+    from(hsl(340deg 100% 16%)),
+    color-stop(8%, hsl(340deg 100% 32%)),
+    color-stop(92%, hsl(340deg 100% 32%)),
+    to(hsl(340deg 100% 16%))
+  );
+ background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.front {
+ display: block;
+ position: relative;
+ padding: 12px 27px;
+ border-radius: 12px;
+ font-size: 1.1rem;
+ color: white;
+ background: hsl(345deg 100% 47%);
+ will-change: transform;
+ -webkit-transform: translateY(-4px);
+     -ms-transform: translateY(-4px);
+         transform: translateY(-4px);
+ -webkit-transition: -webkit-transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+ transition: -webkit-transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+ transition: transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1), -webkit-transform
+    600ms
+    cubic-bezier(.3, .7, .4, 1);
+}
+
+button:hover {
+ -webkit-filter: brightness(110%);
+         filter: brightness(110%);
+}
+
+button:hover .front {
+ -webkit-transform: translateY(-6px);
+     -ms-transform: translateY(-6px);
+         transform: translateY(-6px);
+ -webkit-transition: -webkit-transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+ transition: -webkit-transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5), -webkit-transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .front {
+ -webkit-transform: translateY(-2px);
+     -ms-transform: translateY(-2px);
+         transform: translateY(-2px);
+ -webkit-transition: -webkit-transform 34ms;
+ transition: -webkit-transform 34ms;
+ transition: transform 34ms;
+ transition: transform 34ms, -webkit-transform 34ms;
+}
+
+button:hover .shadow {
+ -webkit-transform: translateY(4px);
+     -ms-transform: translateY(4px);
+         transform: translateY(4px);
+ -webkit-transition: -webkit-transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+ transition: -webkit-transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+ transition: transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5), -webkit-transform
+    250ms
+    cubic-bezier(.3, .7, .4, 1.5);
+}
+
+button:active .shadow {
+ -webkit-transform: translateY(1px);
+     -ms-transform: translateY(1px);
+         transform: translateY(1px);
+ -webkit-transition: -webkit-transform 34ms;
+ transition: -webkit-transform 34ms;
+ transition: transform 34ms;
+ transition: transform 34ms, -webkit-transform 34ms;
+}
+
+button:focus:not(:focus-visible) {
+ outline: none;
+}
+
+
+// silme butonu
+
+.delete-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(20, 20, 20);
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.delete-svgIcon {
+  width: 15px;
+  transition-duration: 0.3s;
+}
+
+.delete-svgIcon path {
+  fill: white;
+}
+
+.delete-button:hover {
+  width: 90px;
+  border-radius: 50px;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 69, 69);
+  align-items: center;
+}
+
+.delete-button:hover .delete-svgIcon {
+  width: 20px;
+  transition-duration: 0.3s;
+  transform: translateY(60%);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.delete-button::before {
+  display: none;
+  content: 'Delete';
+  color: white;
+  transition-duration: 0.3s;
+  font-size: 2px;
+}
+
+.delete-button:hover::before {
+  display: block;
+  padding-right: 10px;
+  font-size: 13px;
+  opacity: 1;
+  transform: translateY(0px);
+  transition-duration: 0.3s;
+}
